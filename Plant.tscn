@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://plant_assets/plant.png" type="Texture" id=1]
+[ext_resource path="res://Plant.gd" type="Script" id=2]
+[ext_resource path="res://MenuButton.gd" type="Script" id=3]
+[ext_resource path="res://Main.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 53.37, 83.6068 )
+
+[node name="Plant" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 240.5, 385.346 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 243.753, 382.995 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="MenuButton" type="MenuButton" parent="."]
+margin_left = 137.0
+margin_top = 219.0
+margin_right = 349.0
+margin_bottom = 549.0
+hint_tooltip = "click me!"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" parent="MenuButton" instance=ExtResource( 4 )]
+position = Vector2( -137.844, -218.753 )
