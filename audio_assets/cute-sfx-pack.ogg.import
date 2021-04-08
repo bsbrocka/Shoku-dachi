@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cute-sfx-pack.ogg-9bbb4645da5c4207eb5c9b4d3a336e0c.oggstr"
+
+[deps]
+
+source_file="res://audio_assets/cute-sfx-pack.ogg"
+dest_files=[ "res://.import/cute-sfx-pack.ogg-9bbb4645da5c4207eb5c9b4d3a336e0c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

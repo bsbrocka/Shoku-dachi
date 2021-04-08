@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://plant_assets/aloe_f1.png" type="Texture" id=1]
+[ext_resource path="res://plant_assets/aloe_f2.png" type="Texture" id=2]
+[ext_resource path="res://plant_assets/aloe_f3.png" type="Texture" id=3]
+[ext_resource path="res://SunlightPlayer.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "bounce",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 38.2199
+height = 63.8193
+
+[node name="SunlightPlayer" type="Area2D"]
+position = Vector2( 233.871, 362.577 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.7, 0.7 )
+frames = SubResource( 1 )
+animation = "bounce"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

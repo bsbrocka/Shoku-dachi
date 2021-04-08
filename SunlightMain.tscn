@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://SunlightMain.gd" type="Script" id=1]
+[ext_resource path="res://SunlightHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SunlightPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SunlightSunlight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://audio_assets/EGSBM Instrumental Draft 3.wav" type="AudioStream" id=5]
+[ext_resource path="res://audio_assets/pop.wav" type="AudioStream" id=6]
+[ext_resource path="res://audio_assets/minus-point.wav" type="AudioStream" id=7]
+[ext_resource path="res://audio_assets/you-lose.wav" type="AudioStream" id=8]
+[ext_resource path="res://audio_assets/you-win.wav" type="AudioStream" id=9]
+[ext_resource path="res://audio_assets/glow-5-suns.wav" type="AudioStream" id=10]
+[ext_resource path="res://SunlightFly.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="SunlightMain" type="Node2D"]
+script = ExtResource( 1 )
+SunlightSunlight = ExtResource( 4 )
+SunlightFly = ExtResource( 11 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 481.0
+margin_bottom = 721.0
+color = Color( 0.298039, 0.247059, 0.137255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SunlightHUD" parent="." instance=ExtResource( 2 )]
+
+[node name="SunlightPlayer" parent="." instance=ExtResource( 3 )]
+
+[node name="SunlightTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="FlyTimer" type="Timer" parent="."]
+wait_time = 1.2
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 232.929, 315.65 )
+
+[node name="SunlightPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="SunlightSpawnLocation" type="PathFollow2D" parent="SunlightPath"]
+
+[node name="FlyPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="FlySpawnLocation" type="PathFollow2D" parent="FlyPath"]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
+stream = ExtResource( 5 )
+volume_db = -5.0
+area_mask = 2147483649
+
+[node name="SunPop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Points5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = -4.0
+
+[node name="YouWin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="YouLose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+volume_db = -6.0
+
+[node name="MinusPoint" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = 5.0
+[connection signal="start_game" from="SunlightHUD" to="." method="new_game"]
+[connection signal="collect" from="SunlightPlayer" to="." method="add_sunlight_point"]
+[connection signal="collect" from="SunlightPlayer" to="." method="delete_collected_sun"]
+[connection signal="hit" from="SunlightPlayer" to="." method="minus_sunlight_point"]
+[connection signal="hit" from="SunlightPlayer" to="." method="delete_collected_sun"]
+[connection signal="timeout" from="SunlightTimer" to="." method="_on_SunlightTimer_timeout"]
+[connection signal="timeout" from="FlyTimer" to="." method="_on_FlyTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
