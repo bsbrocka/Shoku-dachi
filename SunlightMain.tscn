@@ -66,27 +66,33 @@ volume_db = -5.0
 area_mask = 2147483649
 
 [node name="SunPop" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
 stream = ExtResource( 6 )
 
 [node name="Points5" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
 stream = ExtResource( 10 )
 volume_db = -4.0
 
 [node name="YouWin" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
 stream = ExtResource( 9 )
 
 [node name="YouLose" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
 stream = ExtResource( 8 )
 volume_db = -6.0
 
 [node name="MinusPoint" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
 stream = ExtResource( 7 )
 volume_db = 5.0
+[connection signal="exit_game" from="SunlightHUD" to="." method="exit_game"]
 [connection signal="start_game" from="SunlightHUD" to="." method="new_game"]
-[connection signal="collect" from="SunlightPlayer" to="." method="add_sunlight_point"]
 [connection signal="collect" from="SunlightPlayer" to="." method="delete_collected_sun"]
-[connection signal="hit" from="SunlightPlayer" to="." method="minus_sunlight_point"]
+[connection signal="collect" from="SunlightPlayer" to="." method="add_sunlight_point"]
 [connection signal="hit" from="SunlightPlayer" to="." method="delete_collected_sun"]
+[connection signal="hit" from="SunlightPlayer" to="." method="minus_sunlight_point"]
 [connection signal="timeout" from="SunlightTimer" to="." method="_on_SunlightTimer_timeout"]
 [connection signal="timeout" from="FlyTimer" to="." method="_on_FlyTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

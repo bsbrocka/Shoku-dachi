@@ -93,6 +93,7 @@ one_shot = true
 [node name="WinLoseTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+[connection signal="exit_game" from="." to="." method="exit_game"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
