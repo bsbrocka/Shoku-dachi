@@ -1,36 +1,82 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://plant_assets/plant.png" type="Texture" id=1]
+[ext_resource path="res://plant_assets/aloe_f3.png" type="Texture" id=1]
 [ext_resource path="res://Plant.gd" type="Script" id=2]
 [ext_resource path="res://MenuButton.gd" type="Script" id=3]
-[ext_resource path="res://Main.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SunlightMain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://plant_assets/aloe_f2.png" type="Texture" id=5]
+[ext_resource path="res://plant_assets/aloe_f1.png" type="Texture" id=6]
+[ext_resource path="res://plant_assets/outdoor_background.png" type="Texture" id=7]
+[ext_resource path="res://Bar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Counter.tscn" type="PackedScene" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Aloe",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 53.37, 83.6068 )
 
 [node name="Plant" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 240.5, 385.346 )
+[node name="background" type="TextureRect" parent="."]
+margin_right = 480.0
+margin_bottom = 720.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollectTimer" type="Timer" parent="."]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Bar" parent="." instance=ExtResource( 8 )]
+margin_left = 65.5159
+margin_top = 268.363
+margin_right = 417.516
+margin_bottom = 308.363
+
+[node name="Counter" parent="." instance=ExtResource( 9 )]
+margin_left = 359.21
+margin_top = 24.0416
+margin_right = 459.21
+margin_bottom = 64.0416
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 248.824, 506.645 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
+frames = SubResource( 1 )
+animation = "Aloe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 243.753, 382.995 )
+position = Vector2( 251.606, 525.059 )
 scale = Vector2( 2, 2 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="MenuButton" type="MenuButton" parent="."]
-margin_left = 137.0
-margin_top = 219.0
-margin_right = 349.0
-margin_bottom = 549.0
+margin_left = 147.0
+margin_top = 361.0
+margin_right = 359.0
+margin_bottom = 620.0
 hint_tooltip = "click me!"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Main" parent="MenuButton" instance=ExtResource( 4 )]
-position = Vector2( -137.844, -218.753 )
+[node name="SunlightMain" parent="MenuButton" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( -147.924, -362.709 )
+[connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
+[connection signal="collect" from="MenuButton" to="." method="collect"]
