@@ -58,11 +58,6 @@ position = Vector2( 251.606, 525.059 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
 
-[node name="Shop" parent="." instance=ExtResource( 9 )]
-visible = false
-
-[node name="MainHUD" parent="." instance=ExtResource( 10 )]
-
 [node name="MenuButton" type="MenuButton" parent="."]
 margin_left = 147.0
 margin_top = 361.0
@@ -77,7 +72,12 @@ __meta__ = {
 [node name="SunlightMain" parent="MenuButton" instance=ExtResource( 4 )]
 visible = false
 position = Vector2( -147.924, -362.709 )
+
+[node name="Shop" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="MainHUD" parent="." instance=ExtResource( 10 )]
 [connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
-[connection signal="hide" from="Shop" to="MainHUD" method="_on_Shop_hide"]
 [connection signal="collect" from="MenuButton" to="." method="collect"]
 [connection signal="hide" from="MenuButton/SunlightMain" to="MainHUD" method="_on_SunlightMain_hide"]
+[connection signal="hide" from="Shop" to="MainHUD" method="_on_Shop_hide"]
