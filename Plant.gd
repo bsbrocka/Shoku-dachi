@@ -6,7 +6,6 @@ var curr_time
 
 onready var number_label = $Bar/Count/Background/Number
 onready var bar = $Bar/Gauge
-onready var tween = $Tween
 
 func _ready():
 	$AnimatedSprite.play()
@@ -36,7 +35,7 @@ func collect():
 		pass
 	else:
 		currency += 20
-		$Counter/Background/Number.text = str(currency)
+		$MainHUD/Counter/Background/Number.text = str(currency)
 		timer_reset()
 
 func timer_reset():

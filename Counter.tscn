@@ -2,7 +2,7 @@
 
 [ext_resource path="res://GUI_assets/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI_assets/label_HP_bg.png" type="Texture" id=2]
-[ext_resource path="res://GUI_assets/emeralds_icon.png" type="Texture" id=3]
+[ext_resource path="res://plant_assets/golden_leaflet.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -23,10 +23,11 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -85.0
-margin_top = -40.0
-margin_right = 15.0
-margin_bottom = 40.0
+margin_left = -72.0
+margin_top = -31.0
+margin_right = 28.0
+margin_bottom = 49.0
+rect_scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 stretch_mode = 4
 __meta__ = {

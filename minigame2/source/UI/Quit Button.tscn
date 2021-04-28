@@ -1,6 +1,9 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://source/UI/Quit Button.gd" type="Script" id=1]
+[ext_resource path="res://minigame2/source/UI/Quit Button.gd" type="Script" id=1]
+
+
+
 
 [node name="Quit Button" type="Button"]
 margin_top = 36.0

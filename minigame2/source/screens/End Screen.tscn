@@ -43,7 +43,6 @@ __meta__ = {
 margin_bottom = 56.0
 theme = ExtResource( 4 )
 text = "retry"
-next_scene = "res://source/Levels/Level.tscn"
 
 [node name="Quit Button" parent="VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 60.0

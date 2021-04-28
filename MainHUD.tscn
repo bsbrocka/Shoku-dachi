@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Counter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Shop/shopping-bag.png" type="Texture" id=2]
+[ext_resource path="res://MainHUD.gd" type="Script" id=3]
+
+[node name="MainHUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Counter" parent="." instance=ExtResource( 1 )]
+margin_left = 359.0
+margin_top = 24.0
+margin_right = 459.0
+margin_bottom = 64.0
+
+[node name="ShopRec" type="ColorRect" parent="."]
+margin_left = 21.0
+margin_top = 21.0
+margin_right = 61.0
+margin_bottom = 61.0
+color = Color( 0.960784, 0.811765, 0.580392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopButton" type="TextureButton" parent="ShopRec"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 36.0
+margin_bottom = 41.0
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ShopRec/ShopButton" to="." method="_on_ShopButton_pressed"]

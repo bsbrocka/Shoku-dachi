@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy.png-63f114c7bb3f2105c232c34f647cbc2d.stex"
+path="res://.import/enemy.png-88eda55e89bfa8b87ef1878e6547e885.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemy.png"
-dest_files=[ "res://.import/enemy.png-63f114c7bb3f2105c232c34f647cbc2d.stex" ]
+source_file="res://minigame2/assets/enemy.png"
+dest_files=[ "res://.import/enemy.png-88eda55e89bfa8b87ef1878e6547e885.stex" ]
 
 [params]
 

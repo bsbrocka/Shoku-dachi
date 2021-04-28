@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/worm.png-5e0fbb9b14ba6c7ef9f12d3a00c828ae.stex"
+path="res://.import/worm.png-fa21849b0e443f7ffae210eccd39827a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/worm.png"
-dest_files=[ "res://.import/worm.png-5e0fbb9b14ba6c7ef9f12d3a00c828ae.stex" ]
+source_file="res://minigame2/assets/worm.png"
+dest_files=[ "res://.import/worm.png-fa21849b0e443f7ffae210eccd39827a.stex" ]
 
 [params]
 
