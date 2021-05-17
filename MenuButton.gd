@@ -17,7 +17,12 @@ func _on_item_pressed(ID):
 		emit_signal("collect")
 
 	if popup.get_item_text(ID) == "play minigame":
+		get_parent().get_node("MainHUD/Counter").hide()
+		get_parent().get_node("MainHUD/ShopRec").hide()
 		$SunlightMain.visible = true
 		$SunlightMain/SunlightHUD.scale = Vector2(1,1)
+		$SunlightMain/SunlightHUD/ScoreLabel.show()
+		$SunlightMain/SunlightHUD/TimeLabel.show()
+		$SunlightMain/SunlightHUD/Message.show()
 		$SunlightMain/SunlightHUD/StartButton.show()
 		$SunlightMain/SunlightHUD/ExitButton.show()

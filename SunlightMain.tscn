@@ -89,8 +89,11 @@ stream = ExtResource( 7 )
 volume_db = 5.0
 [connection signal="exit_game" from="SunlightHUD" to="." method="exit_game"]
 [connection signal="start_game" from="SunlightHUD" to="." method="new_game"]
-[connection signal="collect" from="SunlightPlayer" to="." method="delete_collected_sun"]
 [connection signal="collect" from="SunlightPlayer" to="." method="add_sunlight_point"]
+<<<<<<< HEAD
+=======
+[connection signal="collect" from="SunlightPlayer" to="." method="delete_collected_sun"]
+>>>>>>> 3b13c7a74a342b53b6d13c3bc2d2eb8f8a16af7f
 [connection signal="hit" from="SunlightPlayer" to="." method="minus_sunlight_point"]
 [connection signal="hit" from="SunlightPlayer" to="." method="delete_collected_sun"]
 [connection signal="timeout" from="SunlightTimer" to="." method="_on_SunlightTimer_timeout"]
