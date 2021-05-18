@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Out of the Blue Instrumental Audacity.wav-0dc759237b392cb123a4de19e6585e84.sample"
+
+[deps]
+
+source_file="res://audio_assets/Out of the Blue Instrumental Audacity.wav"
+dest_files=[ "res://.import/Out of the Blue Instrumental Audacity.wav-0dc759237b392cb123a4de19e6585e84.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
