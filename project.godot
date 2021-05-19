@@ -19,6 +19,10 @@ config/name="Shoku-dachi"
 run/main_scene="res://Plant.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=480

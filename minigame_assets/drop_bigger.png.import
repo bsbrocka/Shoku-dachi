@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/drop_bigger.png-fc65280ea883f233ed8d13c483c2c124.stex"
+path="res://.import/drop_bigger.png-9a4a3c0da1995a5718c5f05834a16ab4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plant_assets/drop_bigger.png"
-dest_files=[ "res://.import/drop_bigger.png-fc65280ea883f233ed8d13c483c2c124.stex" ]
+source_file="res://minigame_assets/drop_bigger.png"
+dest_files=[ "res://.import/drop_bigger.png-9a4a3c0da1995a5718c5f05834a16ab4.stex" ]
 
 [params]
 

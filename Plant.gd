@@ -1,18 +1,29 @@
 extends Area2D
 
 var collect_time = 20
-var currency = 0
 var curr_time
 
 onready var number_label = $Bar/Count/Background/Number
 onready var bar = $Bar/Gauge
 
+var bg = [
+	"res://livespace_assets/outdoor_background.png",
+	"res://livespace_assets/office_bg_2.png",
+	"res://livespace_assets/office_bg.png"
+]
+
+func update_currency():
+	$MainHUD/Counter/Background/Number.text = str(Global.currency)
+
 func _ready():
+	update_currency()
 	$AnimatedSprite.play()
 	bar.max_value = collect_time
 	curr_time = collect_time
 	number_label.text = str(curr_time)
 	$CollectTimer.start()
+	
+	$background.texture = load(bg[Global.shop.selected[2]])
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
@@ -34,8 +45,8 @@ func collect():
 	if curr_time > 0:
 		pass
 	else:
-		currency += 20
-		$MainHUD/Counter/Background/Number.text = str(currency)
+		Global.currency += 20
+		update_currency()
 		timer_reset()
 
 func timer_reset():
@@ -44,3 +55,8 @@ func timer_reset():
 	bar.value = 0
 	$CollectTimer.start()
 	
+func _on_Shop_purchase():
+	update_currency()
+
+func _on_Shop_update_bg():
+	$background.texture = load(bg[Global.shop.selected[2]])

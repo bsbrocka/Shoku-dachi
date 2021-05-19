@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fly_f1.png-811f5431a181a9d774703c39e2f09a86.stex"
+path="res://.import/fly_f1.png-be340150fc705c5832ac2f64cf5155fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plant_assets/fly_f1.png"
-dest_files=[ "res://.import/fly_f1.png-811f5431a181a9d774703c39e2f09a86.stex" ]
+source_file="res://minigame_assets/fly_f1.png"
+dest_files=[ "res://.import/fly_f1.png-be340150fc705c5832ac2f64cf5155fa.stex" ]
 
 [params]
 

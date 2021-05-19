@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/drop.png-3c138c3ed683f00f17d281eafc4cd443.stex"
+path="res://.import/drop.png-3af1a22d65429e69ec26fff5edcd8238.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plant_assets/drop.png"
-dest_files=[ "res://.import/drop.png-3c138c3ed683f00f17d281eafc4cd443.stex" ]
+source_file="res://minigame_assets/drop.png"
+dest_files=[ "res://.import/drop.png-3af1a22d65429e69ec26fff5edcd8238.stex" ]
 
 [params]
 

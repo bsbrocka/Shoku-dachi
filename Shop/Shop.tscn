@@ -1,16 +1,17 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://GUI_assets/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://plant_assets/alocasia_f1.png" type="Texture" id=2]
 [ext_resource path="res://plant_assets/aloe_f1.png" type="Texture" id=3]
 [ext_resource path="res://Shop/house.png" type="Texture" id=4]
-[ext_resource path="res://Shop/round-table.png" type="Texture" id=5]
-[ext_resource path="res://Shop/table.png" type="Texture" id=6]
+[ext_resource path="res://livespace_assets/office_bg_2.png" type="Texture" id=5]
+[ext_resource path="res://Shop/cancel.png" type="Texture" id=6]
 [ext_resource path="res://Shop/Shop.gd" type="Script" id=7]
-[ext_resource path="res://Shop/ribbon.png" type="Texture" id=8]
+[ext_resource path="res://livespace_assets/office_bg.png" type="Texture" id=8]
 [ext_resource path="res://Shop/flower.png" type="Texture" id=9]
 [ext_resource path="res://Shop/eyeglasses.png" type="Texture" id=10]
 [ext_resource path="res://plant_assets/golden_leaflet.png" type="Texture" id=11]
+[ext_resource path="res://livespace_assets/outdoor_background.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 55
@@ -197,7 +198,7 @@ __meta__ = {
 
 [node name="control" type="Node2D" parent="TabContainer/Plants/RichTextLabel"]
 
-[node name="Panel" type="Panel" parent="TabContainer/Plants/RichTextLabel/control"]
+[node name="Panel1" type="Panel" parent="TabContainer/Plants/RichTextLabel/control"]
 margin_left = 15.0
 margin_top = 15.0
 margin_right = 141.0
@@ -207,12 +208,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="alocasia" type="Sprite" parent="TabContainer/Plants/RichTextLabel/control/Panel"]
+[node name="alocasia" type="Sprite" parent="TabContainer/Plants/RichTextLabel/control/Panel1"]
 position = Vector2( 60, 85 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Plants/RichTextLabel/control/Panel"]
+[node name="buyP1" type="Button" parent="TabContainer/Plants/RichTextLabel/control/Panel1"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -227,7 +228,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Price" type="Panel" parent="TabContainer/Plants/RichTextLabel/control/Panel"]
+[node name="Price" type="Panel" parent="TabContainer/Plants/RichTextLabel/control/Panel1"]
+visible = false
 margin_left = 60.0
 margin_top = 4.0
 margin_right = 118.0
@@ -237,7 +239,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TabContainer/Plants/RichTextLabel/control/Panel/Price"]
+[node name="Label" type="Label" parent="TabContainer/Plants/RichTextLabel/control/Panel1/Price"]
 margin_left = 5.1913
 margin_top = 3.4158
 margin_right = 45.1913
@@ -248,7 +250,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Plants/RichTextLabel/control/Panel/Price"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Plants/RichTextLabel/control/Panel1/Price"]
 position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
@@ -268,7 +270,7 @@ position = Vector2( 63, 91 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Plants/RichTextLabel/control/Panel2"]
+[node name="buyP2" type="Button" parent="TabContainer/Plants/RichTextLabel/control/Panel2"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -325,7 +327,7 @@ position = Vector2( 60, 85 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Plants/RichTextLabel/control/Panel3"]
+[node name="buyP3" type="Button" parent="TabContainer/Plants/RichTextLabel/control/Panel3"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -367,6 +369,7 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
 [node name="Accessories" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -385,7 +388,7 @@ __meta__ = {
 
 [node name="control2" type="Node2D" parent="TabContainer/Accessories/RichTextLabel"]
 
-[node name="Panel" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2"]
+[node name="Panel1" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2"]
 margin_left = 15.0
 margin_top = 15.0
 margin_right = 141.0
@@ -395,12 +398,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="glasses" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel"]
-position = Vector2( 62, 80 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 10 )
+[node name="empty" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel1"]
+position = Vector2( 63, 80 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 6 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel"]
+[node name="buyA1" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel1"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -415,7 +418,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Price" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2/Panel"]
+[node name="Price" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2/Panel1"]
+visible = false
 margin_left = 60.0
 margin_top = 4.0
 margin_right = 118.0
@@ -425,7 +429,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TabContainer/Accessories/RichTextLabel/control2/Panel/Price"]
+[node name="Label" type="Label" parent="TabContainer/Accessories/RichTextLabel/control2/Panel1/Price"]
 margin_left = 5.1913
 margin_top = 3.4158
 margin_right = 45.1913
@@ -436,7 +440,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel/Price"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel1/Price"]
 position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
@@ -456,7 +460,7 @@ position = Vector2( 62, 80 )
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 9 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel2"]
+[node name="buyA2" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel2"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -507,12 +511,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ribbon" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3"]
+[node name="glasses" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3"]
 position = Vector2( 62, 80 )
-scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 8 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3"]
+[node name="buyA3" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -553,7 +557,8 @@ position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
-[node name="Decorations" type="Tabs" parent="TabContainer"]
+[node name="Backgrounds" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -561,7 +566,7 @@ margin_top = 39.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Decorations"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Backgrounds"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1.0
@@ -570,9 +575,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="control3" type="Node2D" parent="TabContainer/Decorations/RichTextLabel"]
+[node name="control3" type="Node2D" parent="TabContainer/Backgrounds/RichTextLabel"]
 
-[node name="Panel" type="Panel" parent="TabContainer/Decorations/RichTextLabel/control3"]
+[node name="Panel1" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3"]
 margin_left = 15.0
 margin_top = 15.0
 margin_right = 141.0
@@ -582,12 +587,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="woodentable" type="Sprite" parent="TabContainer/Decorations/RichTextLabel/control3/Panel"]
-position = Vector2( 63, 103 )
+[node name="outdoor" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel1"]
+position = Vector2( 63, 75 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Decorations/RichTextLabel/control3/Panel"]
+[node name="buyB1" type="Button" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel1"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -602,7 +607,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Price" type="Panel" parent="TabContainer/Decorations/RichTextLabel/control3/Panel"]
+[node name="Price" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel1"]
+visible = false
 margin_left = 60.0
 margin_top = 4.0
 margin_right = 118.0
@@ -612,7 +618,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TabContainer/Decorations/RichTextLabel/control3/Panel/Price"]
+[node name="Label" type="Label" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel1/Price"]
 margin_left = 5.1913
 margin_top = 3.4158
 margin_right = 45.1913
@@ -623,12 +629,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Decorations/RichTextLabel/control3/Panel/Price"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel1/Price"]
 position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
-[node name="Panel2" type="Panel" parent="TabContainer/Decorations/RichTextLabel/control3"]
+[node name="Panel2" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3"]
 margin_left = 166.0
 margin_top = 15.0
 margin_right = 292.0
@@ -638,12 +644,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="glasstable" type="Sprite" parent="TabContainer/Decorations/RichTextLabel/control3/Panel2"]
-position = Vector2( 63, 100 )
+[node name="office_day" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel2"]
+position = Vector2( 63, 75 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Decorations/RichTextLabel/control3/Panel2"]
+[node name="buyB2" type="Button" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel2"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -658,7 +664,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Price" type="Panel" parent="TabContainer/Decorations/RichTextLabel/control3/Panel2"]
+[node name="Price" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel2"]
 margin_left = 60.0
 margin_top = 4.0
 margin_right = 118.0
@@ -668,23 +674,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TabContainer/Decorations/RichTextLabel/control3/Panel2/Price"]
+[node name="Label" type="Label" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel2/Price"]
 margin_left = 5.1913
 margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "70"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Decorations/RichTextLabel/control3/Panel2/Price"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel2/Price"]
 position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
-[node name="Panel3" type="Panel" parent="TabContainer/Decorations/RichTextLabel/control3"]
+[node name="Panel3" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3"]
 margin_left = 318.0
 margin_top = 15.0
 margin_right = 444.0
@@ -694,13 +700,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="alocasia" type="Sprite" parent="TabContainer/Decorations/RichTextLabel/control3/Panel3"]
-visible = false
-position = Vector2( 60, 85 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 2 )
+[node name="office_night" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel3"]
+position = Vector2( 63, 75 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
 
-[node name="Purchase" type="Button" parent="TabContainer/Decorations/RichTextLabel/control3/Panel3"]
+[node name="buyB3" type="Button" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel3"]
 margin_left = 1.0
 margin_top = 158.0
 margin_right = 125.0
@@ -715,7 +720,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Price" type="Panel" parent="TabContainer/Decorations/RichTextLabel/control3/Panel3"]
+[node name="Price" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel3"]
 margin_left = 60.0
 margin_top = 4.0
 margin_right = 118.0
@@ -725,18 +730,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="TabContainer/Decorations/RichTextLabel/control3/Panel3/Price"]
+[node name="Label" type="Label" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel3/Price"]
 margin_left = 5.1913
 margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "0"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Decorations/RichTextLabel/control3/Panel3/Price"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel3/Price"]
 position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
@@ -761,7 +766,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Preview" type="TextureRect" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BuyMessage" type="Panel" parent="."]
+visible = false
 light_mask = -2147483648
 anchor_left = 0.5
 anchor_top = 0.5
@@ -820,12 +835,125 @@ text = "No"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="TabContainer/Plants/RichTextLabel/control/Panel/Purchase" to="." method="_on_Purchase_pressed"]
-[connection signal="pressed" from="TabContainer/Plants/RichTextLabel/control/Panel2/Purchase" to="." method="_on_Purchase_pressed"]
-[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel/Purchase" to="." method="_on_Purchase_pressed"]
-[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel2/Purchase" to="." method="_on_Purchase_pressed"]
-[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel3/Purchase" to="." method="_on_Purchase_pressed"]
-[connection signal="pressed" from="TabContainer/Decorations/RichTextLabel/control3/Panel/Purchase" to="." method="_on_Purchase_pressed"]
-[connection signal="pressed" from="TabContainer/Decorations/RichTextLabel/control3/Panel2/Purchase" to="." method="_on_Purchase_pressed"]
+
+[node name="NoFunds" type="Panel" parent="."]
+visible = false
+light_mask = -2147483648
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 5.24768
+margin_top = 300.145
+margin_right = 434.248
+margin_bottom = 477.145
+theme = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="NoFunds"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -119.5
+margin_top = -56.0
+margin_right = 119.5
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 18 )
+text = "Insufficient Funds !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkButton" type="Button" parent="NoFunds"]
+margin_left = 149.169
+margin_top = 98.2599
+margin_right = 273.169
+margin_bottom = 137.26
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmBg" type="Panel" parent="."]
+visible = false
+light_mask = -2147483648
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 5.24768
+margin_top = 300.145
+margin_right = 434.248
+margin_bottom = 477.145
+theme = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="ConfirmBg"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -143.5
+margin_top = -56.0
+margin_right = 128.5
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 18 )
+text = "Change Background?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YesButton" type="Button" parent="ConfirmBg"]
+margin_left = 59.9693
+margin_top = 98.2599
+margin_right = 183.969
+margin_bottom = 137.26
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoButton" type="Button" parent="ConfirmBg"]
+margin_left = 228.169
+margin_top = 98.2599
+margin_right = 352.169
+margin_bottom = 137.26
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TabContainer/Plants/RichTextLabel/control/Panel1/buyP1" to="." method="_on_buyP1_pressed"]
+[connection signal="pressed" from="TabContainer/Plants/RichTextLabel/control/Panel2/buyP2" to="." method="_on_buyP2_pressed"]
+[connection signal="pressed" from="TabContainer/Plants/RichTextLabel/control/Panel3/buyP3" to="." method="_on_buyP3_pressed"]
+[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel1/buyA1" to="." method="_on_buyA1_pressed"]
+[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel2/buyA2" to="." method="_on_buyA2_pressed"]
+[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel3/buyA3" to="." method="_on_buyA3_pressed"]
+[connection signal="pressed" from="TabContainer/Backgrounds/RichTextLabel/control3/Panel1/buyB1" to="." method="_on_buyB1_pressed"]
+[connection signal="pressed" from="TabContainer/Backgrounds/RichTextLabel/control3/Panel2/buyB2" to="." method="_on_buyB2_pressed"]
+[connection signal="pressed" from="TabContainer/Backgrounds/RichTextLabel/control3/Panel3/buyB3" to="." method="_on_buyB3_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="pressed" from="BuyMessage/YesButton" to="." method="_on_YesButton_pressed"]
 [connection signal="pressed" from="BuyMessage/NoButton" to="." method="_on_NoButton_pressed"]
+[connection signal="pressed" from="NoFunds/OkButton" to="." method="_on_OkButton_pressed"]
+[connection signal="pressed" from="ConfirmBg/YesButton" to="." method="_change_bg"]
+[connection signal="pressed" from="ConfirmBg/NoButton" to="." method="_no_bg"]
