@@ -26,4 +26,12 @@ func start(pos):
 	position = pos
 	# target = pos  # initial target is the start position
 	show()
-	$CollisionShape2D.disabled = false
+	#$CollisionShape2D.disabled = false
+
+func snip():
+	$AnimatedSprite.animation = "closed_shears"
+	$SnipTimer.set_wait_time(.2)
+	$SnipTimer.start()
+
+func _on_SnipTimer_timeout():
+	$AnimatedSprite.animation = "open_shears"

@@ -5,10 +5,11 @@ export var min_speed = 200
 export var max_speed = 300
 
 func _ready():
-	# randomly choose one of the three mobs to spawn
-	var mob_types = $AnimatedSprite.frames.get_animation_names()
-	$AnimatedSprite.animation = mob_types[randi() % mob_types.size()]
+	$AnimatedSprite.animation = "fly"
 
 # when mob exits the screen, delete node
 func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+
+func animate_pop():
 	queue_free()

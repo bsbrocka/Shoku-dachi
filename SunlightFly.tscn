@@ -1,25 +1,22 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://plant_assets/fly-sample.png" type="Texture" id=1]
 [ext_resource path="res://SunlightFly.gd" type="Script" id=2]
+[ext_resource path="res://minigame_assets/beetle.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fly",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 21.0098
-height = 27.2805
+[sub_resource type="CircleShape2D" id=2]
 
 [node name="SunlightFly" type="RigidBody2D" groups=[
 "flys",
 ]]
-position = Vector2( 223.612, 253.723 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 223.612, 253.285 )
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 2 )
@@ -28,17 +25,18 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.03, 0.03 )
+scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 1 )
 animation = "fly"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.331, 2.7 )
+position = Vector2( 0.247, -0.251 )
 rotation = 1.00007
+scale = Vector2( 3.6, 3.6 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 3.25845, 2.83806 )
-scale = Vector2( 3.23889, 2.83947 )
+position = Vector2( 0.0213923, -0.565501 )
+scale = Vector2( 3.49382, 3.47678 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

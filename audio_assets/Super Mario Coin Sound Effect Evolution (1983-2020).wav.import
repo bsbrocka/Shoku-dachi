@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Super Mario Coin Sound Effect Evolution (1983-2020).wav-3f0acc7026da368f41250d3b46419fed.sample"
+
+[deps]
+
+source_file="res://audio_assets/Super Mario Coin Sound Effect Evolution (1983-2020).wav"
+dest_files=[ "res://.import/Super Mario Coin Sound Effect Evolution (1983-2020).wav-3f0acc7026da368f41250d3b46419fed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

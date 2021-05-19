@@ -24,7 +24,7 @@ func show_game_over(win_status):
 	# wait until the MessageTimer has counted down.
 	yield($MessageTimer, "timeout")
 	
-	$Message.text = "Get 3\nPoints!"
+	$Message.text = "Get 10\nPoints!"
 	$Message.show()
 	
 	# make a one shot timer and wait for it to finish

@@ -13,7 +13,7 @@ func _ready():
 	randomize()
 	#new_game()
 	
-func add_sunlight_point(body):
+func add_sunlight_point(_body):
 	score += 1
 	if score % 5 == 0:
 		$Points5.play()
@@ -22,8 +22,9 @@ func add_sunlight_point(body):
 	# we still have to delete the sunlight immediately
 	$SunlightHUD.update_score(score)
 
-func minus_sunlight_point(body):
-	score -= 1
+func minus_sunlight_point(_body):
+	if score > 0:
+		score -= 1
 	$MinusPoint.play()
 	# we still have to delete the sunlight immediately
 	$SunlightHUD.update_score(score)
@@ -113,4 +114,4 @@ func _on_StartTimer_timeout():
 	$ScoreTimer.start()
 
 func delete_collected_sun(body):
-	body.queue_free()
+	body.animate_pop()

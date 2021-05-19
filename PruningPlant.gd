@@ -28,3 +28,12 @@ func _input_event(_viewport, event, _shape_idx):
 		
 func on_click():
 	print("Click")
+
+func quick_bounce():
+	print("bounce!!")
+	$AnimatedSprite.play()
+	$BounceTimer.set_wait_time(.5)
+	$BounceTimer.start()
+
+func _on_BounceTimer_timeout():
+	$AnimatedSprite.stop()
