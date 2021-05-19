@@ -18,8 +18,8 @@ script = ExtResource( 1 )
 PruningCutSpot = ExtResource( 7 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 481.0
-margin_bottom = 721.0
+margin_right = 480.0
+margin_bottom = 720.0
 mouse_filter = 2
 color = Color( 0.137255, 0.196078, 0.298039, 1 )
 __meta__ = {
@@ -27,6 +27,15 @@ __meta__ = {
 }
 
 [node name="PruningHUD" parent="." instance=ExtResource( 6 )]
+
+[node name="PruningPlant" parent="." instance=ExtResource( 2 )]
+position = Vector2( 238.755, 411.994 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="PruningShears" parent="." instance=ExtResource( 3 )]
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 246.047, 450.822 )
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -68,15 +77,6 @@ volume_db = 2.0
 position = Vector2( 240, 360 )
 stream = ExtResource( 8 )
 volume_db = -6.0
-
-[node name="PruningPlant" parent="." instance=ExtResource( 2 )]
-position = Vector2( 238.755, 411.994 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="PruningShears" parent="." instance=ExtResource( 3 )]
-
-[node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 246.047, 450.822 )
 [connection signal="quick_bounce" from="." to="PruningPlant" method="quick_bounce"]
 [connection signal="snip" from="." to="PruningShears" method="snip"]
 [connection signal="exit_game" from="PruningHUD" to="." method="exit_game"]

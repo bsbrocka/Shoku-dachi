@@ -12,3 +12,7 @@ func _on_SunlightMain_hide():
 
 func _on_Shop_hide():
 	$ShopRec.show()
+
+func _on_PruningMain_hide():
+	$ShopRec.show()
+	$Counter.show()

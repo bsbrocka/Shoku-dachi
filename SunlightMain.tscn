@@ -23,8 +23,8 @@ SunlightSunlight = ExtResource( 4 )
 SunlightFly = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 481.0
-margin_bottom = 721.0
+margin_right = 480.0
+margin_bottom = 720.0
 color = Color( 0.298039, 0.247059, 0.137255, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -51,7 +51,7 @@ position = Vector2( 3.9499, 3.20312 )
 scale = Vector2( 1.2, 1.2 )
 frames = SubResource( 1 )
 animation = "circle"
-frame = 5
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PruningCutSpotBubble"]
