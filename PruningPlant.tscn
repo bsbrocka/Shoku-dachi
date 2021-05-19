@@ -10,7 +10,7 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "bounce",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -19,8 +19,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 107.124
-height = 144.826
+radius = 116.091
+height = 23.8881
 
 [node name="PruningPlant" type="Area2D"]
 position = Vector2( 241.905, 449.792 )
@@ -31,7 +31,12 @@ position = Vector2( 0.424423, 1.57014 )
 scale = Vector2( 1.8, 1.8 )
 frames = SubResource( 1 )
 animation = "bounce"
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.667419, -64.7397 )
 shape = SubResource( 2 )
-[connection signal="input_event" from="." to="." method="_on_PruningPlant_input_event"]
+
+[node name="BounceTimer" type="Timer" parent="."]
+wait_time = 0.5
+[connection signal="timeout" from="BounceTimer" to="." method="_on_BounceTimer_timeout"]

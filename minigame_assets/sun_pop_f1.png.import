@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sun_pop_f1.png-6d1a026c0ce9ca5f0621308b0558d814.stex"
+path="res://.import/sun_pop_f1.png-0c08863c140cbfb899911b7bffb682c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://plant_assets/sun_pop_f1.png"
-dest_files=[ "res://.import/sun_pop_f1.png-6d1a026c0ce9ca5f0621308b0558d814.stex" ]
+source_file="res://minigame_assets/sun_pop_f1.png"
+dest_files=[ "res://.import/sun_pop_f1.png-0c08863c140cbfb899911b7bffb682c3.stex" ]
 
 [params]
 
