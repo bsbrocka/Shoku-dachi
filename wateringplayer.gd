@@ -2,11 +2,11 @@ extends KinematicBody2D
 
 signal killed
 signal update_score
-export var speed:= Vector2(10.0, 10.0)
+export var speed:= Vector2(30.0, 100.0)
 export var acceleration:=3500.0 #to make this configurable
 var velocity:=Vector2.ZERO #since we're only dealing with 2d/ movement on x and y axis per second/ zero by default->will not move by default
 var screen_size
-export var stomp_impulse:=500.0
+export var stomp_impulse:=200.0
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -36,7 +36,7 @@ func _physics_process(delta: float)->void:
 	#avoid going outside of screen
 	position += velocity * delta
 	position.x = clamp(position.x, 75, 425)
-	position.y = clamp(position.y, 0, screen_size.y+100)
+	position.y = clamp(position.y,0,screen_size.y)
 	
 func get_direction()->Vector2:
 	#movement to right =1, movement to left=-1, if player presses both keys the player will not move
