@@ -51,6 +51,7 @@ speed = Vector2( 900, 1700 )
 position = Vector2( 104, 584 )
 
 [node name="bgm" type="AudioStreamPlayer2D" parent="."]
+visible = false
 position = Vector2( 240, 360 )
 stream = ExtResource( 2 )
 volume_db = -11.107
