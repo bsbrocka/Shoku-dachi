@@ -12,7 +12,7 @@ func _ready():
 	$PruningMain/PruningHUD.scale = Vector2(0,0)
 	$WateringMain.visible = false
 	$WateringMain/wateringHUD.scale = Vector2(0,0)
-	
+	$WateringMain/ScoreInterface.scale=Vector2(0,0)
 	popup = get_popup()
 	popup.add_item("collect money")
 	popup.add_item("play sunlight minigame")
@@ -51,4 +51,5 @@ func _on_item_pressed(ID):
 		get_parent().get_node("MainHUD/ShopRec").hide()
 		$WateringMain.visible = true
 		$WateringMain/wateringHUD.scale = Vector2(1,1)
+		$WateringMain/ScoreInterface.scale=Vector2(1,1)
 		emit_signal("go")
