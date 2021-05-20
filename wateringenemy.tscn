@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://wateringenemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/worm.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.8639, 12.4146 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.8639, 9.63707 )
+
+[node name="wateringenemy" type="KinematicBody2D" groups=[
+"enemy",
+]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+
+[node name="worm" type="Sprite" parent="."]
+position = Vector2( 1.52588e-05, -24.1329 )
+scale = Vector2( 0.116671, 0.117071 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -15.4771 )
+shape = SubResource( 1 )
+
+[node name="StompDetection" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetection"]
+modulate = Color( 0.164706, 0.0980392, 0.74902, 1 )
+position = Vector2( -0.793701, -40.8755 )
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -0.39685, -14.8819 )
+scale = Vector2( 2.74297, 1.34592 )
+process_parent = true
+physics_process_parent = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.396851, -25.3984 )
+scale = Vector2( 2.54772, 2.38898 )
+[connection signal="body_entered" from="StompDetection" to="." method="_on_StompDetection_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/drop.png" type="Texture" id=1]
+[ext_resource path="res://watering_Droplet.gd" type="Script" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.49875
+height = 0.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 9.27814
+height = 7.53953
+
+[node name="droplet" type="RigidBody2D" groups=[
+"droplet",
+]]
+position = Vector2( 0, -4.09475 )
+collision_layer = 4
+collision_mask = 9
+gravity_scale = 3.64
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 2 )
+speed = Vector2( 300, 1000 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.1481, -6.23336 )
+scale = Vector2( 0.418785, 0.418785 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.314979, -16.8515 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color( 0.392157, 0.0901961, 0.0901961, 1 )
+self_modulate = Color( 0.129412, 0.47451, 0.623529, 1 )
+position = Vector2( -0.314979, 2.51984 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_droplet_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

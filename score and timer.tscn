@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ScoreInterface.gd" type="Script" id=1]
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="score" type="Label" parent="."]
+margin_left = 422.046
+margin_right = 480.046
+margin_bottom = 14.0
+text = "Score:%s"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Label" parent="."]
+margin_right = 75.0
+margin_bottom = 14.0
+text = "Time Left: %s"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://wateringmain.gd" type="Script" id=1]
+[ext_resource path="res://audio_assets/Out of the Blue Instrumental Audacity.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://wateringplayer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://score and timer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://audio_assets/you-win.wav" type="AudioStream" id=6]
+[ext_resource path="res://wateringHUD.tscn" type="PackedScene" id=8]
+
+[node name="Main" type="Node2D"]
+light_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -496.719 ]
+}
+
+[node name="gameover_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -9.087
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -120.0
+margin_top = -424.0
+margin_right = 592.0
+margin_bottom = 800.0
+color = Color( 0.435294, 0.364706, 0.827451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wateringHUD" parent="." instance=ExtResource( 8 )]
+
+[node name="ScoreInterface" parent="." instance=ExtResource( 5 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 4.23779, -161.168 )
+tile_set = ExtResource( 3 )
+collision_layer = 2147483656
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 917502, 0, 0, 917503, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 983038, 0, 0, 983039, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0 )
+
+[node name="wateringplayer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 168.527, 228.73 )
+speed = Vector2( 900, 1700 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="startposition" type="Position2D" parent="."]
+position = Vector2( 104, 584 )
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
+stream = ExtResource( 2 )
+volume_db = -11.107
+[connection signal="game_over" from="." to="wateringHUD" method="_on_Main_game_over"]
+[connection signal="exit" from="wateringHUD" to="." method="_on_wateringHUD_exit"]
+[connection signal="restart" from="wateringHUD" to="." method="_on_wateringHUD_restart"]
+[connection signal="start_game" from="wateringHUD" to="." method="start_game"]
+[connection signal="killed" from="wateringplayer" to="." method="gameover"]
+[connection signal="update_score" from="wateringplayer" to="." method="_on_wateringplayer_update_score"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

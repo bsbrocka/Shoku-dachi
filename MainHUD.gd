@@ -16,3 +16,7 @@ func _on_Shop_hide():
 func _on_PruningMain_hide():
 	$ShopRec.show()
 	$Counter.show()
+
+func _on_WateringMain_hide():
+	$ShopRec.show()
+	$Counter.show()
