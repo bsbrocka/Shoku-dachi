@@ -16,6 +16,7 @@ func _on_Shop_hide():
 func _on_PruningMain_hide():
 	$ShopRec.show()
 	$Counter.show()
+	get_parent().get_node("MenuButton").mouse_filter = 0
 
 func _on_WateringMain_hide():
 	$ShopRec.show()

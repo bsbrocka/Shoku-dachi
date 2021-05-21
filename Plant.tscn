@@ -84,13 +84,14 @@ __meta__ = {
 visible = false
 position = Vector2( -146.924, -360.709 )
 
-[node name="PruningMain" parent="MenuButton" instance=ExtResource( 14 )]
-visible = false
-position = Vector2( -146.924, -360.709 )
-
 [node name="WateringMain" parent="MenuButton" instance=ExtResource( 15 )]
 visible = false
 position = Vector2( -146, -360 )
+
+[node name="PruningMain" parent="MenuButton" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( -146.924, -360.709 )
+z_index = 1
 
 [node name="Shop" parent="." instance=ExtResource( 9 )]
 visible = false
@@ -100,8 +101,8 @@ visible = false
 [connection signal="collect" from="MenuButton" to="." method="collect"]
 [connection signal="go" from="MenuButton" to="MenuButton/WateringMain" method="_on_MenuButton_go"]
 [connection signal="hide" from="MenuButton/SunlightMain" to="MainHUD" method="_on_SunlightMain_hide"]
-[connection signal="hide" from="MenuButton/PruningMain" to="MainHUD" method="_on_PruningMain_hide"]
 [connection signal="hide" from="MenuButton/WateringMain" to="MainHUD" method="_on_WateringMain_hide"]
+[connection signal="hide" from="MenuButton/PruningMain" to="MainHUD" method="_on_PruningMain_hide"]
 [connection signal="hide" from="Shop" to="MainHUD" method="_on_Shop_hide"]
 [connection signal="purchase" from="Shop" to="." method="_on_Shop_purchase"]
 [connection signal="update_bg" from="Shop" to="." method="_on_Shop_update_bg"]

@@ -38,6 +38,7 @@ func _on_item_pressed(ID):
 	if popup.get_item_text(ID) == "play pruning minigame":
 		get_parent().get_node("MainHUD/Counter").hide()
 		get_parent().get_node("MainHUD/ShopRec").hide()
+		self.mouse_filter = 2
 		$PruningMain.visible = true
 		$PruningMain/PruningHUD.scale = Vector2(1,1)
 		$PruningMain/PruningHUD/ScoreLabel.show()
