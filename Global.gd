@@ -1,6 +1,6 @@
 extends Node
 
-var currency = 100
+var currency = 0
 var shop = {
 	'boughtP' : [true, false, false],
 	'boughtA' : [true, false, false],
