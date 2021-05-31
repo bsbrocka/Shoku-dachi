@@ -23,15 +23,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "Aloe",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Alocasia",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Aloe",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -44,6 +44,7 @@ script = ExtResource( 2 )
 [node name="background" type="TextureRect" parent="."]
 margin_right = 480.0
 margin_bottom = 720.0
+mouse_filter = 2
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false

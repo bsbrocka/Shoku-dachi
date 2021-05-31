@@ -21,7 +21,6 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ScoreLabel" type="Label" parent="."]
-visible = false
 anchor_right = 1.0
 margin_left = 2.12372
 margin_top = 58.2745
@@ -35,7 +34,6 @@ __meta__ = {
 }
 
 [node name="TimeLabel" type="Label" parent="."]
-visible = false
 anchor_right = 1.0
 margin_left = 382.938
 margin_top = 2.0
@@ -48,7 +46,6 @@ __meta__ = {
 }
 
 [node name="Message" type="Label" parent="."]
-visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -65,7 +62,6 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -82,7 +78,6 @@ __meta__ = {
 }
 
 [node name="ExitButton" type="Button" parent="."]
-visible = false
 margin_left = 176.0
 margin_top = 632.0
 margin_right = 304.0
