@@ -1,6 +1,7 @@
 extends Control
 signal purchase
 signal update_bg
+signal update_plant
 
 onready var panelsP = $TabContainer/Plants/RichTextLabel/control
 onready var panelsA = $TabContainer/Accessories/RichTextLabel/control2
@@ -63,6 +64,7 @@ func _selected(node, item):
 			if panelsP.get_node("Panel"+str(buttonP+1)).get_node("buyP"+str(buttonP+1)).text == "Selected":
 				panelsP.get_node("Panel"+str(buttonP+1)).get_node("buyP"+str(buttonP+1)).text = "Select"
 		Global.shop.selected[0] = item
+		emit_signal("update_plant")
 	
 	elif category == "boughtA":
 		for buttonA in range(panelsA.get_child_count()):
@@ -81,6 +83,13 @@ func _selected(node, item):
 	print(Global.shop)
 	Global.save_shop()
 
+func _change_plant():
+	$ConfirmPlant.hide()
+	_selected(panelsP.get_node("Panel"+str(item_no+1)).get_node("buyP"+str(item_no+1)), item_no)
+
+func _no_plant():
+	$ConfirmPlant.hide()
+	
 func _change_bg():
 	$Preview.hide()
 	$ConfirmBg.hide()
@@ -99,7 +108,7 @@ func _button_status():
 		$BuyMessage.show()
 	else:
 		if category == "boughtP" and panelsP.get_node("Panel"+str(item_no+1)).get_node("buyP"+str(item_no+1)).text != "Selected":
-			_selected(panelsP.get_node("Panel"+str(item_no+1)).get_node("buyP"+str(item_no+1)), item_no)
+			$ConfirmPlant.show()
 		elif category == "boughtA" and panelsA.get_node("Panel"+str(item_no+1)).get_node("buyA"+str(item_no+1)).text != "Selected":
 			_selected(panelsA.get_node("Panel"+str(item_no+1)).get_node("buyA"+str(item_no+1)), item_no)
 		else:
@@ -197,7 +206,4 @@ func _on_OkButton_pressed():
 	item_no = 0
 	category = ""
 	$NoFunds.hide()
-
-
-
 

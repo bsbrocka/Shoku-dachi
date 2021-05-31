@@ -1,6 +1,6 @@
 extends Node
 
-var currency = 100
+var currency = 0
 var shop = {
 	'boughtP' : [true, false, false],
 	'boughtA' : [true, false, false],
@@ -10,6 +10,21 @@ var shop = {
 
 var currency_path = 'user://currency'
 var shop_path = 'user://shop'
+
+func save_currency():
+	var file = File.new()
+	file.open(currency_path, file.WRITE_READ)
+	file.store_var(currency)
+	file.close()
+
+func load_currency():
+	var file = File.new()
+	if not file.file_exists(currency_path):
+		return false
+	file.open(currency_path, file.READ)
+	currency = file.get_var()
+	file.close()
+	return true
 
 func save_shop():
 	var file = File.new()

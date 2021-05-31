@@ -50,7 +50,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CollectTimer" type="Timer" parent="."]
+[node name="BarProgress" type="Timer" parent="."]
 
 [node name="Bar" parent="." instance=ExtResource( 8 )]
 margin_left = 65.5159
@@ -98,7 +98,7 @@ z_index = 1
 visible = false
 
 [node name="MainHUD" parent="." instance=ExtResource( 10 )]
-[connection signal="timeout" from="CollectTimer" to="." method="_on_CollectTimer_timeout"]
+[connection signal="timeout" from="BarProgress" to="." method="_on_BarProgress_timeout"]
 [connection signal="collect" from="MenuButton" to="." method="collect"]
 [connection signal="go" from="MenuButton" to="MenuButton/WateringMain" method="_on_MenuButton_go"]
 [connection signal="hide" from="MenuButton/SunlightMain" to="MainHUD" method="_on_SunlightMain_hide"]
@@ -107,3 +107,4 @@ visible = false
 [connection signal="hide" from="Shop" to="MainHUD" method="_on_Shop_hide"]
 [connection signal="purchase" from="Shop" to="." method="_on_Shop_purchase"]
 [connection signal="update_bg" from="Shop" to="." method="_on_Shop_update_bg"]
+[connection signal="update_plant" from="Shop" to="." method="_on_Shop_update_plant"]
