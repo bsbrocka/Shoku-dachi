@@ -12,7 +12,9 @@ var enemy_scene=load("res://wateringenemy.tscn")
 var player_scene=load("res://wateringplayer.tscn")
 var droplet_scene=load("res://watering_Droplet.tscn")
 func start_game():
-	$ScoreInterface.scale=Vector2(1,1)
+	#$ScoreInterface.scale=Vector2(1,1)
+	$ScoreInterface/score.show()
+	$ScoreInterface/timer.show()
 	$wateringplayer.start($startposition.position)
 	#var player=player_scene.instance()
 	#player.position=$startposition.position
@@ -48,7 +50,9 @@ func gameover():
 	$bgm.stop()
 	$Timer.stop()
 	$wateringHUD.final_score(score)
-	$ScoreInterface.scale=Vector2(0,0)
+	#$ScoreInterface.scale=Vector2(0,0)
+	$ScoreInterface/score.hide()
+	$ScoreInterface/timer.hide()
 	emit_signal("game_over")
 	get_tree().call_group("enemy","queue_free")
 	get_tree().call_group("droplet","queue_free")
@@ -70,8 +74,13 @@ func _on_wateringHUD_exit():
 		emit_signal("ave")
 	else:
 		emit_signal("high")
-	$wateringHUD.scale = Vector2(0,0)
-	$ScoreInterface.scale=Vector2(0,0)
+	#$wateringHUD.scale = Vector2(0,0)
+	#$ScoreInterface.scale=Vector2(0,0)
+	$wateringHUD/TextureRect.hide()
+	$wateringHUD/title.hide()
+	$wateringHUD/score.hide()
+	$wateringHUD/VBoxContainer2.hide()
+	$wateringHUD/VBoxContainer.hide()
 	self.visible = false
 	
 func _on_wateringplayer_update_score():
