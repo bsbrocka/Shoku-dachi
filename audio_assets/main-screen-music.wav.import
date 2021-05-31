@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/main-screen-music.wav-e43d858a7bef0621178e97ef78e1314d.sample"
+
+[deps]
+
+source_file="res://audio_assets/main-screen-music.wav"
+dest_files=[ "res://.import/main-screen-music.wav-e43d858a7bef0621178e97ef78e1314d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

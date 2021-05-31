@@ -57,6 +57,7 @@ margin_left = 65.5159
 margin_top = 268.363
 margin_right = 417.516
 margin_bottom = 308.363
+mouse_filter = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 248.824, 506.645 )

@@ -78,6 +78,7 @@ volume_db = 2.0
 position = Vector2( 240, 360 )
 stream = ExtResource( 8 )
 volume_db = -6.0
+
 [connection signal="quick_bounce" from="." to="PruningPlant" method="quick_bounce"]
 [connection signal="snip" from="." to="PruningShears" method="snip"]
 [connection signal="exit_game" from="PruningHUD" to="." method="exit_game"]
