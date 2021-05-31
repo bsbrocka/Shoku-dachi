@@ -98,6 +98,7 @@ z_index = 1
 visible = false
 
 [node name="MainHUD" parent="." instance=ExtResource( 10 )]
+
 [connection signal="timeout" from="BarProgress" to="." method="_on_BarProgress_timeout"]
 [connection signal="collect" from="MenuButton" to="." method="collect"]
 [connection signal="go" from="MenuButton" to="MenuButton/WateringMain" method="_on_MenuButton_go"]
