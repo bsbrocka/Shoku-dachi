@@ -1,32 +1,25 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://dodge_assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/xolonium.tres" type="DynamicFont" id=1]
 [ext_resource path="res://PruningHUD.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 1 )
-
-[sub_resource type="InputEventAction" id=2]
+[sub_resource type="InputEventAction" id=1]
 action = "ui_select"
 
-[sub_resource type="ShortCut" id=3]
-shortcut = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 32
-font_data = ExtResource( 1 )
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
 
 [node name="PruningHUD" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 margin_left = 2.12372
 margin_top = 58.2745
 margin_right = 2.12372
 margin_bottom = 136.275
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
 text = "0"
 align = 1
 __meta__ = {
@@ -34,6 +27,7 @@ __meta__ = {
 }
 
 [node name="TimeLabel" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 margin_left = 382.938
 margin_top = 2.0
@@ -46,6 +40,7 @@ __meta__ = {
 }
 
 [node name="Message" type="Label" parent="."]
+visible = false
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
@@ -53,7 +48,7 @@ margin_left = 0.749146
 margin_top = -184.756
 margin_right = 0.749146
 margin_bottom = -25.756
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
 text = "Get 10 Points!"
 align = 1
 autowrap = true
@@ -62,6 +57,7 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -70,19 +66,20 @@ margin_left = -90.0
 margin_top = -200.0
 margin_right = 90.0
 margin_bottom = -100.0
-custom_fonts/font = SubResource( 1 )
-shortcut = SubResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+shortcut = SubResource( 2 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ExitButton" type="Button" parent="."]
+visible = false
 margin_left = 176.0
 margin_top = 632.0
 margin_right = 304.0
 margin_bottom = 681.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = ExtResource( 1 )
 text = "Exit"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -36,6 +36,7 @@ func _ready():
 	
 	$AnimatedSprite.play(plant[Global.shop.selected[0]])
 	$background.texture = load(bg[Global.shop.selected[2]])
+	$MainScreenMusic.play()
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton \
@@ -56,7 +57,7 @@ func reset_timer():
 	$BarProgress.start()
 
 func collect():
-	if time_remaining != "00 : 00":
+	if time_remaining != "Ready!":
 		pass
 	else:
 		Global.currency += plant_currency[Global.shop.selected[0]]
@@ -72,9 +73,11 @@ func _process(delta):
 	var secs = fmod(time,60)
 	var mins = fmod(time,3600) / 60
 	
-	time_remaining = "%02d : %02d" % [mins, secs]
+	time_remaining = "%02dm %02ds" % [mins, secs]
 	number_label.text = time_remaining
-	if time_remaining == "00 : 00":
+	if time_remaining == "00m 00s":
+		time_remaining = "Ready!"
+		number_label.text = time_remaining
 		time_running = false
 
 func _on_BarProgress_timeout():

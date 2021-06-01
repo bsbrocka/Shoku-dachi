@@ -7,12 +7,12 @@ var popup
 
 func _ready():
 	$SunlightMain.visible = false
-	$SunlightMain/SunlightHUD.scale = Vector2(0,0)
+	#$SunlightMain/SunlightHUD.scale = Vector2(0,0)
 	$PruningMain.visible = false
-	$PruningMain/PruningHUD.scale = Vector2(0,0)
+	#$PruningMain/PruningHUD.scale = Vector2(0,0)
 	$WateringMain.visible = false
-	$WateringMain/wateringHUD.scale = Vector2(0,0)
-	$WateringMain/ScoreInterface.scale=Vector2(0,0)
+	#$WateringMain/wateringHUD.scale = Vector2(0,0)
+	#$WateringMain/ScoreInterface.scale=Vector2(0,0)
 	popup = get_popup()
 	popup.add_item("collect money")
 	popup.add_item("play sunlight minigame")
@@ -25,10 +25,12 @@ func _on_item_pressed(ID):
 		emit_signal("collect")
 
 	if popup.get_item_text(ID) == "play sunlight minigame":
+		get_parent().get_node("MainScreenMusic").mainloop = false
+		get_parent().get_node("MainScreenMusic").stop()
 		get_parent().get_node("MainHUD/Counter").hide()
 		get_parent().get_node("MainHUD/ShopRec").hide()
 		$SunlightMain.visible = true
-		$SunlightMain/SunlightHUD.scale = Vector2(1,1)
+		#$SunlightMain/SunlightHUD.scale = Vector2(1,1)
 		$SunlightMain/SunlightHUD/ScoreLabel.show()
 		$SunlightMain/SunlightHUD/TimeLabel.show()
 		$SunlightMain/SunlightHUD/Message.show()
@@ -36,11 +38,14 @@ func _on_item_pressed(ID):
 		$SunlightMain/SunlightHUD/ExitButton.show()
 
 	if popup.get_item_text(ID) == "play pruning minigame":
+		get_parent().get_node("MainScreenMusic").mainloop = false
+		get_parent().get_node("MainScreenMusic").stop()
 		get_parent().get_node("MainHUD/Counter").hide()
 		get_parent().get_node("MainHUD/ShopRec").hide()
+		get_parent().get_node("Bar").hide()
 		self.mouse_filter = 2
 		$PruningMain.visible = true
-		$PruningMain/PruningHUD.scale = Vector2(1,1)
+		#$PruningMain/PruningHUD.scale = Vector2(1,1)
 		$PruningMain/PruningHUD/ScoreLabel.show()
 		$PruningMain/PruningHUD/TimeLabel.show()
 		$PruningMain/PruningHUD/Message.show()
@@ -48,9 +53,17 @@ func _on_item_pressed(ID):
 		$PruningMain/PruningHUD/ExitButton.show()
 		
 	if popup.get_item_text(ID) == "play watering minigame":
+		get_parent().get_node("MainScreenMusic").mainloop = false
+		get_parent().get_node("MainScreenMusic").stop()
 		get_parent().get_node("MainHUD/Counter").hide()
 		get_parent().get_node("MainHUD/ShopRec").hide()
 		$WateringMain.visible = true
-		$WateringMain/wateringHUD.scale = Vector2(1,1)
-		$WateringMain/ScoreInterface.scale=Vector2(1,1)
+		#$WateringMain/wateringHUD.scale = Vector2(1,1)
+		$WateringMain/wateringHUD/VBoxContainer.show()
+		$WateringMain/wateringHUD/VBoxContainer/StartButton.show()
+		$WateringMain/wateringHUD/VBoxContainer/ExitButton.show()
+		$WateringMain/wateringHUD/TextureRect.show()
+		$WateringMain/wateringHUD/title.show()
+		$WateringMain/wateringHUD/score.show()
+		#$WateringMain/ScoreInterface.scale=Vector2(1,1)
 		emit_signal("go")

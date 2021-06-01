@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://plant_assets/aloe_f3.png" type="Texture" id=1]
 [ext_resource path="res://Plant.gd" type="Script" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://plant_assets/alocasia_f1.png" type="Texture" id=13]
 [ext_resource path="res://PruningMain.tscn" type="PackedScene" id=14]
 [ext_resource path="res://wateringmain.tscn" type="PackedScene" id=15]
+[ext_resource path="res://audio_assets/main-screen-music.wav" type="AudioStream" id=16]
+[ext_resource path="res://MainScreenMusic.gd" type="Script" id=17]
+[ext_resource path="res://ShopMusic.gd" type="Script" id=18]
+[ext_resource path="res://audio_assets/shop-screen-music.wav" type="AudioStream" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -50,13 +54,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BarProgress" type="Timer" parent="."]
-
 [node name="Bar" parent="." instance=ExtResource( 8 )]
 margin_left = 65.5159
 margin_top = 268.363
 margin_right = 417.516
 margin_bottom = 308.363
+mouse_filter = 2
+
+[node name="BarProgress" type="Timer" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 248.824, 506.645 )
@@ -99,6 +104,13 @@ visible = false
 
 [node name="MainHUD" parent="." instance=ExtResource( 10 )]
 
+[node name="MainScreenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+script = ExtResource( 17 )
+
+[node name="ShopMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+script = ExtResource( 18 )
 [connection signal="timeout" from="BarProgress" to="." method="_on_BarProgress_timeout"]
 [connection signal="collect" from="MenuButton" to="." method="collect"]
 [connection signal="go" from="MenuButton" to="MenuButton/WateringMain" method="_on_MenuButton_go"]

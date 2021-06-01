@@ -50,4 +50,7 @@ func _on_StartButton_pressed():
 func _on_ExitButton_pressed():
 	$StartButton.hide()
 	$ExitButton.hide()
+	$ScoreLabel.hide()
+	$TimeLabel.hide()
+	$Message.hide()
 	emit_signal("exit_game")

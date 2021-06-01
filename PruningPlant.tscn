@@ -39,4 +39,5 @@ shape = SubResource( 2 )
 
 [node name="BounceTimer" type="Timer" parent="."]
 wait_time = 0.5
+
 [connection signal="timeout" from="BounceTimer" to="." method="_on_BounceTimer_timeout"]
