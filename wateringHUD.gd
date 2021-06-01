@@ -3,6 +3,7 @@ signal start_game
 signal restart
 signal exit
 func _ready():
+	$message.hide()
 	$"title".hide()
 	#$VboxContainer.hide()
 	$VBoxContainer2.hide()
@@ -10,12 +11,14 @@ func _ready():
 	$VBoxContainer2.hide()
 	
 func start_screen_show():
-	$title.text="CATCH WATER"
+	$message.hide()
+	$title.text="Collect 7 Droplets"
 	$"title".show()
 	$VBoxContainer.show()
 	$TextureRect.show()
 
 func _on_Start_Button_button_up():
+	$message.hide()
 	$"title".hide()
 	$"VBoxContainer/StartButton".hide()
 	$"VBoxContainer/ExitButton".hide()
@@ -34,8 +37,9 @@ func _on_Main_game_over():
 	$title.show()
 	$VBoxContainer2.show()
 	$TextureRect.show()
-
+	$message.show()
 func _on_restart_button_up():
+	$message.hide()
 	$"title".hide()
 	$VBoxContainer2.hide()
 	$TextureRect.hide()
@@ -44,3 +48,8 @@ func _on_restart_button_up():
 	#get_tree().change_scene("res://wateringmain.tscn")
 	emit_signal("restart")
 	
+func _on_Main_lose():
+	$message.text=str("You lose!")
+	
+func _on_Main_win():
+	$message.text=str("You win!")
