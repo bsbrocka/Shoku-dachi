@@ -23,15 +23,15 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Alocasia",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Aloe",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Alocasia",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -106,6 +106,8 @@ visible = false
 [connection signal="hide" from="MenuButton/SunlightMain" to="MainHUD" method="_on_SunlightMain_hide"]
 [connection signal="hide" from="MenuButton/WateringMain" to="MainHUD" method="_on_WateringMain_hide"]
 [connection signal="hide" from="MenuButton/PruningMain" to="MainHUD" method="_on_PruningMain_hide"]
+[connection signal="quick_bounce" from="MenuButton/PruningMain" to="MenuButton/PruningMain/PruningPlant" method="quick_bounce"]
+[connection signal="snip" from="MenuButton/PruningMain" to="MenuButton/PruningMain/PruningShears" method="snip"]
 [connection signal="hide" from="Shop" to="MainHUD" method="_on_Shop_hide"]
 [connection signal="purchase" from="Shop" to="." method="_on_Shop_purchase"]
 [connection signal="update_bg" from="Shop" to="." method="_on_Shop_update_bg"]

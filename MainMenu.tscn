@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://GUI_assets/mm_bg.PNG" type="Texture" id=1]
+[ext_resource path="res://audio_assets/title-screen-music.wav" type="AudioStream" id=2]
+[ext_resource path="res://MainMenuMusic.gd" type="Script" id=3]
+[ext_resource path="res://GUI_assets/mm_play_cropped.png" type="Texture" id=4]
+[ext_resource path="res://PlayButton.gd" type="Script" id=5]
+[ext_resource path="res://audio_assets/button-click.wav" type="AudioStream" id=6]
+[ext_resource path="res://GUI_assets/mm_exit_cropped.png" type="Texture" id=7]
+[ext_resource path="res://ExitButton.gd" type="Script" id=8]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="BG Image" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 222.247, 393.984 )
+stream = ExtResource( 2 )
+volume_db = -2.0
+autoplay = true
+script = ExtResource( 3 )
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 175.0
+margin_top = 500.0
+margin_right = 299.0
+margin_bottom = 554.0
+icon = ExtResource( 4 )
+flat = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="PlayButton"]
+stream = ExtResource( 6 )
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 175.0
+margin_top = 550.0
+margin_right = 299.0
+margin_bottom = 606.0
+icon = ExtResource( 7 )
+flat = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="ExitButton"]
+stream = ExtResource( 6 )
+
+[connection signal="finished" from="MainMenuMusic" to="MainMenuMusic" method="_on_MainMenuMusic_finished"]
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_ExitButton_pressed"]
