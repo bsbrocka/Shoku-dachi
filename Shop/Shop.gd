@@ -2,6 +2,7 @@ extends Control
 signal purchase
 signal update_bg
 signal update_plant
+signal update_acc
 
 onready var panelsP = $TabContainer/Plants/RichTextLabel/control
 onready var panelsA = $TabContainer/Accessories/RichTextLabel/control2
@@ -15,10 +16,14 @@ onready var priceP3 = str2var(panelsP.get_node("Panel3/Price/Label").text)
 onready var priceA1 = str2var(panelsA.get_node("Panel1/Price/Label").text)
 onready var priceA2 = str2var(panelsA.get_node("Panel2/Price/Label").text)
 onready var priceA3 = str2var(panelsA.get_node("Panel3/Price/Label").text)
+onready var priceA4 = str2var(panelsA.get_node("Panel4/Price/Label").text)
+onready var priceA5 = str2var(panelsA.get_node("Panel5/Price/Label").text)
+onready var priceA6 = str2var(panelsA.get_node("Panel6/Price/Label").text)
 
 onready var priceB1 = str2var(panelsB.get_node("Panel1/Price/Label").text)
 onready var priceB2 = str2var(panelsB.get_node("Panel2/Price/Label").text)
 onready var priceB3 = str2var(panelsB.get_node("Panel3/Price/Label").text)
+onready var priceB4 = str2var(panelsB.get_node("Panel4/Price/Label").text)
 
 var buy_price = 0
 var item_no = 0
@@ -27,7 +32,8 @@ var category = ""
 var preview_bg = [
 	"res://livespace_assets/outdoor_background.png",
 	"res://livespace_assets/office_bg_2.png",
-	"res://livespace_assets/office_bg.png"
+	"res://livespace_assets/office_bg.png",
+	"res://livespace_assets/space_bg.png"
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -65,12 +71,14 @@ func _selected(node, item):
 				panelsP.get_node("Panel"+str(buttonP+1)).get_node("buyP"+str(buttonP+1)).text = "Select"
 		Global.shop.selected[0] = item
 		emit_signal("update_plant")
+		emit_signal("update_acc")
 	
 	elif category == "boughtA":
 		for buttonA in range(panelsA.get_child_count()):
 			if panelsA.get_node("Panel"+str(buttonA+1)).get_node("buyA"+str(buttonA+1)).text == "Selected":
 				panelsA.get_node("Panel"+str(buttonA+1)).get_node("buyA"+str(buttonA+1)).text = "Select"
 		Global.shop.selected[1] = item
+		emit_signal("update_acc")
 		
 	else:
 		for buttonB in range(panelsB.get_child_count()):
@@ -89,6 +97,13 @@ func _change_plant():
 
 func _no_plant():
 	$ConfirmPlant.hide()
+
+func _change_acc():
+	$ConfirmAcc.hide()
+	_selected(panelsA.get_node("Panel"+str(item_no+1)).get_node("buyA"+str(item_no+1)), item_no)
+
+func _no_acc():
+	$ConfirmAcc.hide()
 	
 func _change_bg():
 	$Preview.hide()
@@ -110,12 +125,13 @@ func _button_status():
 		if category == "boughtP" and panelsP.get_node("Panel"+str(item_no+1)).get_node("buyP"+str(item_no+1)).text != "Selected":
 			$ConfirmPlant.show()
 		elif category == "boughtA" and panelsA.get_node("Panel"+str(item_no+1)).get_node("buyA"+str(item_no+1)).text != "Selected":
-			_selected(panelsA.get_node("Panel"+str(item_no+1)).get_node("buyA"+str(item_no+1)), item_no)
+			$ConfirmAcc.show()
 		else:
 			if panelsB.get_node("Panel"+str(item_no+1)).get_node("buyB"+str(item_no+1)).text != "Selected":
 				$Preview.texture = load(preview_bg[item_no])
 				$Preview.show()
 				$ConfirmBg.show()
+# PLANTS
 
 func _on_buyP1_pressed():
 	buy_price = priceP1
@@ -135,6 +151,8 @@ func _on_buyP3_pressed():
 	category = "boughtP"
 	_button_status()
 
+# ACCESSORIES
+
 func _on_buyA1_pressed():
 	buy_price = priceA1
 	item_no = 0
@@ -153,6 +171,26 @@ func _on_buyA3_pressed():
 	category = "boughtA"
 	_button_status()
 
+func _on_buyA4_pressed():
+	buy_price = priceA4
+	item_no = 3
+	category = "boughtA"
+	_button_status()
+
+func _on_buyA5_pressed():
+	buy_price = priceA5
+	item_no = 4
+	category = "boughtA"
+	_button_status()
+	
+func _on_buyA6_pressed():
+	buy_price = priceA6
+	item_no = 5
+	category = "boughtA"
+	_button_status()
+	
+#BACKGROUNDS
+
 func _on_buyB1_pressed():
 	buy_price = priceB1
 	item_no = 0
@@ -168,6 +206,12 @@ func _on_buyB2_pressed():
 func _on_buyB3_pressed():
 	buy_price = priceB3
 	item_no = 2
+	category = "boughtB"
+	_button_status()
+
+func _on_buyB4_pressed():
+	buy_price = priceB4
+	item_no = 3
 	category = "boughtB"
 	_button_status()
 

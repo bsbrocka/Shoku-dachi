@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://wateringmain.gd" type="Script" id=1]
-[ext_resource path="res://audio_assets/Out of the Blue Instrumental Audacity.wav" type="AudioStream" id=2]
+[ext_resource path="res://audio_assets/Everything Is Sound Instrumental.wav" type="AudioStream" id=2]
 [ext_resource path="res://minigame_assets/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://wateringplayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio_assets/you-lose.wav" type="AudioStream" id=5]
@@ -55,11 +55,10 @@ position = Vector2( 104, 584 )
 visible = false
 position = Vector2( 240, 360 )
 stream = ExtResource( 2 )
-volume_db = -11.107
 
 [node name="lose_sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 240, 360 )
 stream = ExtResource( 5 )
-volume_db = -6.433
 [connection signal="game_over" from="." to="wateringHUD" method="_on_Main_game_over"]
 [connection signal="lose" from="." to="wateringHUD" method="_on_Main_lose"]
 [connection signal="win" from="." to="wateringHUD" method="_on_Main_win"]

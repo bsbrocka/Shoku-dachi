@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://GUI_assets/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://plant_assets/alocasia_f1.png" type="Texture" id=2]
@@ -8,10 +8,14 @@
 [ext_resource path="res://Shop/cancel.png" type="Texture" id=6]
 [ext_resource path="res://Shop/Shop.gd" type="Script" id=7]
 [ext_resource path="res://livespace_assets/office_bg.png" type="Texture" id=8]
-[ext_resource path="res://Shop/flower.png" type="Texture" id=9]
-[ext_resource path="res://Shop/eyeglasses.png" type="Texture" id=10]
+[ext_resource path="res://Shop/bows/bow_red.png" type="Texture" id=9]
+[ext_resource path="res://Shop/glasses/glasses_round.png" type="Texture" id=10]
 [ext_resource path="res://plant_assets/golden_leaflet.png" type="Texture" id=11]
 [ext_resource path="res://livespace_assets/outdoor_background.png" type="Texture" id=12]
+[ext_resource path="res://livespace_assets/space_bg.png" type="Texture" id=13]
+[ext_resource path="res://Shop/glasses/glasses_shades.png" type="Texture" id=14]
+[ext_resource path="res://Shop/bows/bow_yellow.png" type="Texture" id=15]
+[ext_resource path="res://Shop/bows/bow_blue.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 55
@@ -184,6 +188,7 @@ __meta__ = {
 }
 
 [node name="Plants" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -373,7 +378,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
 [node name="Accessories" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -459,9 +463,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="flower" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel2"]
+[node name="redbow" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel2"]
 position = Vector2( 62, 80 )
-scale = Vector2( 0.15, 0.15 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 9 )
 
 [node name="buyA2" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel2"]
@@ -515,10 +519,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="glasses" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3"]
+[node name="blubow" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3"]
 position = Vector2( 62, 80 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 10 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 16 )
 
 [node name="buyA3" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3"]
 margin_left = 1.0
@@ -557,6 +561,174 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel3/Price"]
+position = Vector2( 43.8902, 10.8546 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+
+[node name="Panel4" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2"]
+margin_left = 15.0
+margin_top = 220.0
+margin_right = 141.0
+margin_bottom = 370.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ylwbow" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel4"]
+position = Vector2( 62, 80 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 15 )
+
+[node name="buyA4" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel4"]
+margin_left = 1.0
+margin_top = 158.0
+margin_right = 125.0
+margin_bottom = 183.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Purchase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Price" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2/Panel4"]
+margin_left = 60.0
+margin_top = 4.0
+margin_right = 118.0
+margin_bottom = 27.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Accessories/RichTextLabel/control2/Panel4/Price"]
+margin_left = 5.1913
+margin_top = 3.4158
+margin_right = 45.1913
+margin_bottom = 22.4158
+custom_fonts/font = SubResource( 15 )
+text = "20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel4/Price"]
+position = Vector2( 43.8902, 10.8546 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+
+[node name="Panel5" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2"]
+margin_left = 166.0
+margin_top = 220.0
+margin_right = 292.0
+margin_bottom = 370.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rndglasses" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel5"]
+position = Vector2( 62, 80 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 10 )
+
+[node name="buyA5" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel5"]
+margin_left = 1.0
+margin_top = 158.0
+margin_right = 125.0
+margin_bottom = 183.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Purchase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Price" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2/Panel5"]
+margin_left = 60.0
+margin_top = 4.0
+margin_right = 118.0
+margin_bottom = 27.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Accessories/RichTextLabel/control2/Panel5/Price"]
+margin_left = 5.1913
+margin_top = 3.4158
+margin_right = 45.1913
+margin_bottom = 22.4158
+custom_fonts/font = SubResource( 15 )
+text = "20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel5/Price"]
+position = Vector2( 43.8902, 10.8546 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+
+[node name="Panel6" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2"]
+margin_left = 318.0
+margin_top = 220.0
+margin_right = 444.0
+margin_bottom = 370.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shades" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel6"]
+position = Vector2( 62, 80 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 14 )
+
+[node name="buyA6" type="Button" parent="TabContainer/Accessories/RichTextLabel/control2/Panel6"]
+margin_left = 1.0
+margin_top = 158.0
+margin_right = 125.0
+margin_bottom = 183.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Purchase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Price" type="Panel" parent="TabContainer/Accessories/RichTextLabel/control2/Panel6"]
+margin_left = 60.0
+margin_top = 4.0
+margin_right = 118.0
+margin_bottom = 27.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Accessories/RichTextLabel/control2/Panel6/Price"]
+margin_left = 5.1913
+margin_top = 3.4158
+margin_right = 45.1913
+margin_bottom = 22.4158
+custom_fonts/font = SubResource( 15 )
+text = "20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TabContainer/Accessories/RichTextLabel/control2/Panel6/Price"]
 position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
@@ -746,6 +918,62 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel3/Price"]
+position = Vector2( 43.8902, 10.8546 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+
+[node name="Panel4" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3"]
+margin_left = 15.0
+margin_top = 220.0
+margin_right = 141.0
+margin_bottom = 370.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="office_night" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel4"]
+position = Vector2( 63, 75 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 13 )
+
+[node name="buyB4" type="Button" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel4"]
+margin_left = 1.0
+margin_top = 158.0
+margin_right = 125.0
+margin_bottom = 183.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Purchase"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Price" type="Panel" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel4"]
+margin_left = 60.0
+margin_top = 4.0
+margin_right = 118.0
+margin_bottom = 27.0
+theme = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel4/Price"]
+margin_left = 5.1913
+margin_top = 3.4158
+margin_right = 45.1913
+margin_bottom = 22.4158
+custom_fonts/font = SubResource( 15 )
+text = "70"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TabContainer/Backgrounds/RichTextLabel/control3/Panel4/Price"]
 position = Vector2( 43.8902, 10.8546 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
@@ -1090,16 +1318,20 @@ __meta__ = {
 [connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel1/buyA1" to="." method="_on_buyA1_pressed"]
 [connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel2/buyA2" to="." method="_on_buyA2_pressed"]
 [connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel3/buyA3" to="." method="_on_buyA3_pressed"]
+[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel4/buyA4" to="." method="_on_buyA4_pressed"]
+[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel5/buyA5" to="." method="_on_buyA5_pressed"]
+[connection signal="pressed" from="TabContainer/Accessories/RichTextLabel/control2/Panel6/buyA6" to="." method="_on_buyA6_pressed"]
 [connection signal="pressed" from="TabContainer/Backgrounds/RichTextLabel/control3/Panel1/buyB1" to="." method="_on_buyB1_pressed"]
 [connection signal="pressed" from="TabContainer/Backgrounds/RichTextLabel/control3/Panel2/buyB2" to="." method="_on_buyB2_pressed"]
 [connection signal="pressed" from="TabContainer/Backgrounds/RichTextLabel/control3/Panel3/buyB3" to="." method="_on_buyB3_pressed"]
+[connection signal="pressed" from="TabContainer/Backgrounds/RichTextLabel/control3/Panel4/buyB4" to="." method="_on_buyB4_pressed"]
 [connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
 [connection signal="pressed" from="BuyMessage/YesButton" to="." method="_on_YesButton_pressed"]
 [connection signal="pressed" from="BuyMessage/NoButton" to="." method="_on_NoButton_pressed"]
 [connection signal="pressed" from="NoFunds/OkButton" to="." method="_on_OkButton_pressed"]
 [connection signal="pressed" from="ConfirmBg/YesButton" to="." method="_change_bg"]
 [connection signal="pressed" from="ConfirmBg/NoButton" to="." method="_no_bg"]
-[connection signal="pressed" from="ConfirmAcc/YesButton" to="." method="_change_bg"]
-[connection signal="pressed" from="ConfirmAcc/NoButton" to="." method="_no_bg"]
+[connection signal="pressed" from="ConfirmAcc/YesButton" to="." method="_change_acc"]
+[connection signal="pressed" from="ConfirmAcc/NoButton" to="." method="_no_acc"]
 [connection signal="pressed" from="ConfirmPlant/YesButton" to="." method="_change_plant"]
 [connection signal="pressed" from="ConfirmPlant/NoButton" to="." method="_no_plant"]
