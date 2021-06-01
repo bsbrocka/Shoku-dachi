@@ -16,11 +16,11 @@ var bg = [
 	"res://livespace_assets/space_bg.png"
 ]
 
-var plant = ["Alocasia", "Aloe"]
-var bow_scale = [1.5,2.5]
-var glasses_scale = [2,3.5]
-var bow_pos = [[248,660],[185,575]]
-var glasses_pos = [[248,618],[250,645]]
+var plant = ["Alocasia", "Aloe", "Bamboo"]
+var bow_scale = [1.5,2.5,2.5]
+var glasses_scale = [2,3.5,2.5]
+var bow_pos = [[248,660],[185,575],[250,625]]
+var glasses_pos = [[248,618],[250,645],[248,675]]
 
 var acc = [
 	"res://Shop/bows/bow_red.png",
@@ -31,8 +31,8 @@ var acc = [
 ]
 
 # 1 second delay
-var plant_time = [61,121]
-var plant_currency = [20,50] 
+var plant_time = [11,121,181]
+var plant_currency = [200,40,60] 
 
 func update_currency():
 	$MainHUD/Counter/Background/Number.text = str(Global.currency)

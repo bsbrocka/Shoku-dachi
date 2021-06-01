@@ -127,7 +127,7 @@ func _button_status():
 		elif category == "boughtA" and panelsA.get_node("Panel"+str(item_no+1)).get_node("buyA"+str(item_no+1)).text != "Selected":
 			$ConfirmAcc.show()
 		else:
-			if panelsB.get_node("Panel"+str(item_no+1)).get_node("buyB"+str(item_no+1)).text != "Selected":
+			if category == "boughtB" and panelsB.get_node("Panel"+str(item_no+1)).get_node("buyB"+str(item_no+1)).text != "Selected":
 				$Preview.texture = load(preview_bg[item_no])
 				$Preview.show()
 				$ConfirmBg.show()

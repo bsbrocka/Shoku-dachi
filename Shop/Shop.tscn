@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://GUI_assets/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://plant_assets/alocasia_f1.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Shop/glasses/glasses_shades.png" type="Texture" id=14]
 [ext_resource path="res://Shop/bows/bow_yellow.png" type="Texture" id=15]
 [ext_resource path="res://Shop/bows/bow_blue.png" type="Texture" id=16]
+[ext_resource path="res://plant_assets/bamboo_f1.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 55
@@ -188,7 +189,6 @@ __meta__ = {
 }
 
 [node name="Plants" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -331,10 +331,9 @@ __meta__ = {
 }
 
 [node name="alocasia" type="Sprite" parent="TabContainer/Plants/RichTextLabel/control/Panel3"]
-visible = false
-position = Vector2( 60, 85 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 2 )
+position = Vector2( 63, 85 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 17 )
 
 [node name="buyP3" type="Button" parent="TabContainer/Plants/RichTextLabel/control/Panel3"]
 margin_left = 1.0
@@ -367,7 +366,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "0"
+text = "80"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -378,6 +377,7 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
 [node name="Accessories" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
