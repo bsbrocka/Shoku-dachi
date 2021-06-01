@@ -3,29 +3,30 @@ extends Node2D
 signal game_over
 
 #score signals
-signal low
-signal ave
-signal high
+signal lose
+signal win
 var score := 0 #setget set_score
 var remaining_time:=20 #setget set_time
 var enemy_scene=load("res://wateringenemy.tscn")
 var player_scene=load("res://wateringplayer.tscn")
 var droplet_scene=load("res://watering_Droplet.tscn")
 func start_game():
-	$ScoreInterface.scale=Vector2(1,1)
+	#$wateringScoreInterface.scale=Vector2(1,1)
+	$wateringScoreInterface/score.show()
+	$wateringScoreInterface/timer.show()
 	$wateringplayer.start($startposition.position)
 	#var player=player_scene.instance()
 	#player.position=$startposition.position
 	#add_child(player)
 	score = 0
-	$ScoreInterface.update_score(score)
+	$wateringScoreInterface.update_score(score)
 	remaining_time = 20
-	$ScoreInterface.update_time(remaining_time)
+	$wateringScoreInterface.update_time(remaining_time)
 	$Timer.start()
 	$bgm.play()
 func _on_Timer_timeout():
 	remaining_time-=1
-	$ScoreInterface.update_time(remaining_time)
+	$wateringScoreInterface.update_time(remaining_time)
 	if remaining_time<=0:
 		gameover()
 	var temp=randi()%9+1
@@ -44,19 +45,34 @@ func _on_Timer_timeout():
 		drops.position.x=rand_range(32,420)
 		drops.position.y=11
 		add_child(drops)
+func killed():
+	#get_tree().paused=true
+	#yield(get_tree().create_timer(0.5),"timeout")
+	get_tree().paused=false
+	$wateringplayer.hide()
+	gameover()
 func gameover():
 	$bgm.stop()
 	$Timer.stop()
 	$wateringHUD.final_score(score)
-	$ScoreInterface.scale=Vector2(0,0)
+	#$wateringScoreInterface.scale=Vector2(0,0)
+	$wateringScoreInterface/score.hide()
+	$wateringScoreInterface/timer.hide()
 	emit_signal("game_over")
 	get_tree().call_group("enemy","queue_free")
 	get_tree().call_group("droplet","queue_free")
-	$gameover_sound.play()
-
+	if score <7:
+		$lose_sound.play()
+		emit_signal("lose")
+	else:
+		$win_sound.play()
+		emit_signal("win")
+		
 func _on_wateringHUD_restart():
 #	get_tree().reload_current_scene()
 	#get_tree().change_scene("res://wateringmain.tscn")
+	$lose_sound.stop()
+	$win_sound.stop()
 	$Timer.start()
 	start_game()
 	
@@ -64,16 +80,18 @@ func _on_MenuButton_go():
 	$wateringHUD.start_screen_show()
 
 func _on_wateringHUD_exit():
-	if score<=10:
-		emit_signal("low")
-	elif score<=15:
-		emit_signal("ave")
-	else:
-		emit_signal("high")
-	$wateringHUD.scale = Vector2(0,0)
-	$ScoreInterface.scale=Vector2(0,0)
+	$lose_sound.stop()
+	$win_sound.stop()
+	#$wateringHUD.scale = Vector2(0,0)
+	#$wateringScoreInterface.scale=Vector2(0,0)
+	$wateringHUD/TextureRect.hide()
+	$wateringHUD/title.hide()
+	$wateringHUD/score.hide()
+	$wateringHUD/VBoxContainer2.hide()
+	$wateringHUD/VBoxContainer.hide()
+	$wateringHUD/message.hide()
 	self.visible = false
 	
 func _on_wateringplayer_update_score():
 	score+=1
-	$ScoreInterface.update_score(score)
+	$wateringScoreInterface.update_score(score)

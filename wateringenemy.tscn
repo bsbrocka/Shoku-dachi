@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://wateringenemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/worm.png" type="Texture" id=2]
+[ext_resource path="res://minigame_assets/worm.png" type="Texture" id=2]
+[ext_resource path="res://audio_assets/Splat Sound Effect (Free Download)-[AudioTrimmer.com].wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24.8639, 12.4146 )
+extents = Vector2( 25.6576, 12.4146 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24.8639, 9.63707 )
@@ -15,6 +16,11 @@ extents = Vector2( 24.8639, 9.63707 )
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 1 )
+
+[node name="splat" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -0.396851, -25.3984 )
+scale = Vector2( 2.54772, 2.38898 )
+stream = ExtResource( 3 )
 
 [node name="worm" type="Sprite" parent="."]
 position = Vector2( 1.52588e-05, -24.1329 )

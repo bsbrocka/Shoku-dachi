@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Splat Sound Effect (Free Download)-[AudioTrimmer.com].wav-deee8bff71a6ac3a549d21effef68420.sample"
+
+[deps]
+
+source_file="res://audio_assets/Splat Sound Effect (Free Download)-[AudioTrimmer.com].wav"
+dest_files=[ "res://.import/Splat Sound Effect (Free Download)-[AudioTrimmer.com].wav-deee8bff71a6ac3a549d21effef68420.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

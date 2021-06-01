@@ -53,7 +53,7 @@ func new_game():
 	emit_signal("quick_bounce")
 
 func exit_game():
-	$PruningHUD.scale = Vector2(0,0)
+	#$PruningHUD.scale = Vector2(0,0)
 	self.visible = false
 
 func _on_ScoreTimer_timeout():

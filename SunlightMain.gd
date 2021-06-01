@@ -62,7 +62,7 @@ func new_game():
 	$Music.play()
 
 func exit_game():
-	$SunlightHUD.scale = Vector2(0,0)
+	#$SunlightHUD.scale = Vector2(0,0)
 	self.visible = false
 
 # every time sunlighttimer goes off, spawn sun
