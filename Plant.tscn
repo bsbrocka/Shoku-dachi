@@ -142,10 +142,12 @@ visible = false
 
 [node name="MainScreenMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+volume_db = -10.0
 script = ExtResource( 17 )
 
 [node name="ShopMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
+volume_db = -10.0
 script = ExtResource( 18 )
 [connection signal="timeout" from="BarProgress" to="." method="_on_BarProgress_timeout"]
 [connection signal="collect" from="MenuButton" to="." method="collect"]
