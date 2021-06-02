@@ -122,6 +122,8 @@ func _on_Shop_update_bg():
 
 func _on_Shop_update_plant():
 	$AnimatedSprite.play(plant[Global.shop.selected[0]])
+	Global.last_collect = OS.get_unix_time()
+	Global.save_time()
 	reset_timer()
 
 func _on_Shop_update_acc():
