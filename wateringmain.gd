@@ -61,7 +61,7 @@ func gameover():
 	emit_signal("game_over")
 	get_tree().call_group("enemy","queue_free")
 	get_tree().call_group("droplet","queue_free")
-	if score <7:
+	if score < 5:
 		$lose_sound.play()
 		emit_signal("lose")
 	else:

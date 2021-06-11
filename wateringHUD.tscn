@@ -25,7 +25,7 @@ margin_top = 218.0
 margin_right = 480.0
 margin_bottom = 288.0
 theme = ExtResource( 4 )
-text = "Catch 7 Droplets"
+text = "Catch 5 Droplets"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

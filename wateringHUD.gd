@@ -12,7 +12,7 @@ func _ready():
 	
 func start_screen_show():
 	$message.hide()
-	$title.text="Collect 7 Droplets"
+	$title.text="Collect 5 Droplets"
 	$"title".show()
 	$VBoxContainer.show()
 	$TextureRect.show()

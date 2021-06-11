@@ -151,11 +151,14 @@ func _on_Shop_update_acc():
 func _on_sunlight_minigame_won():
 	Global.currency += 15
 	update_currency()
+	Global.save_currency()
 	
 func _on_pruning_minigame_won():
 	Global.currency += 10
 	update_currency()
+	Global.save_currency()
 	
 func _on_watering_minigame_won():
 	Global.currency += 20
 	update_currency()
+	Global.save_currency()
