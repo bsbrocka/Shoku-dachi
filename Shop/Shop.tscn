@@ -310,7 +310,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "30"
+text = "40"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -366,7 +366,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "80"
+text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -377,7 +377,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
 [node name="Accessories" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -499,7 +498,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "20"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -555,7 +554,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "20"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -611,7 +610,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "20"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -667,7 +666,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "20"
+text = "70"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -723,7 +722,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "20"
+text = "70"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -734,7 +733,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 11 )
 
 [node name="Backgrounds" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -856,7 +854,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "50"
+text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -912,7 +910,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "50"
+text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -968,7 +966,7 @@ margin_top = 3.4158
 margin_right = 45.1913
 margin_bottom = 22.4158
 custom_fonts/font = SubResource( 15 )
-text = "70"
+text = "150"
 __meta__ = {
 "_edit_use_anchors_": false
 }

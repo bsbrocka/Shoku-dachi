@@ -31,8 +31,8 @@ var acc = [
 ]
 
 # 1 second delay
-var plant_time = [11,121,181]
-var plant_currency = [200,40,60] 
+var plant_time = [61,301,601]
+var plant_currency = [5,20,50] 
 
 func update_currency():
 	$MainHUD/Counter/Background/Number.text = str(Global.currency)
@@ -149,12 +149,12 @@ func _on_Shop_update_acc():
 		$Glasses.show() 
 
 func _on_sunlight_minigame_won():
-	Global.currency += 15
+	Global.currency += 10
 	update_currency()
 	Global.save_currency()
 	
 func _on_pruning_minigame_won():
-	Global.currency += 10
+	Global.currency += 15
 	update_currency()
 	Global.save_currency()
 	
